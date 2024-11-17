@@ -30,6 +30,7 @@
 	pkgs.neovim
 	pkgs.ngrok
 	pkgs.obsidian
+	pkgs.php83
 	pkgs.tea
 	pkgs.tmux
 	];
@@ -37,7 +38,8 @@
 	homebrew = {
 	enable = true;
 	brews = [
-	"mas"
+		"mas"
+		"nvm"
 	];
 	casks = [
 		"firefox"
