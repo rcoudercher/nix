@@ -19,7 +19,6 @@
       environment.systemPackages = [
 	pkgs.alacritty
 	pkgs.bruno
-	pkgs.ffmpeg
 	pkgs.fx
 	pkgs.k9s
 	pkgs.kubectx
