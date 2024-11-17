@@ -51,6 +51,9 @@
 
 	# Ensure removal of casks not in the list above
 	onActivation.cleanup = "zap";
+
+	onActivation.autoUpdate = true;
+	onActivation.upgrade = true;
 	};
 	
 	fonts.packages = [
