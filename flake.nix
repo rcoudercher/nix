@@ -19,6 +19,7 @@
       environment.systemPackages = [
 	pkgs.alacritty
 	pkgs.bruno
+	pkgs.discord
 	pkgs.fx
 	pkgs.k9s
 	pkgs.kubectx
@@ -30,36 +31,40 @@
 	pkgs.neovim
 	pkgs.ngrok
 	pkgs.obsidian
+	pkgs.postman
 	pkgs.php83
+	pkgs.slack
+	# pkgs.steam
 	pkgs.tea
 	pkgs.tmux
+	# pkgs.tor
+	pkgs.vscode
 	];
 
 	homebrew = {
-	enable = true;
-	brews = [
-		"mas"
-		"nvm"
-	];
-	casks = [
-		"firefox"
-		"visual-studio-code"
-		"vlc"
-	];
+		enable = true;
+		brews = [
+			# Find app ids on the mac app store
+			"mas"
+			"nvm"
+		];
+		casks = [
+			"firefox"
+			"vlc"
+		];
 
-	masApps = {
-	"Trello" = 1278508951;
-	};
+		masApps = {
+			"Trello" = 1278508951;
+		};
 
-	# Ensure removal of casks not in the list above
-	onActivation.cleanup = "zap";
-
-	onActivation.autoUpdate = true;
-	onActivation.upgrade = true;
+		# Ensure removal of casks not in the list above
+		onActivation.cleanup = "zap";
+		onActivation.autoUpdate = true;
+		onActivation.upgrade = true;
 	};
 	
 	fonts.packages = [
-	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+		(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 	];
 
 	system.activationScripts.applications.text = let
@@ -87,8 +92,9 @@
 		dock.persistent-apps = [
 		"${pkgs.alacritty}/Applications/Alacritty.app"
 		"/Applications/Firefox.app"
-		"/Applications/Discord.app"
+		"${pkgs.discord}/Applications/Discord.app"
 		"${pkgs.obsidian}/Applications/Obsidian.app"
+		"${pkgs.vscode}/Applications/Visual Studio Code.app"
 		"/System/Applications/Mail.app"
 		"/System/Applications/Calendar.app"
 		];
